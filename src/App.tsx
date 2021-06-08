@@ -1,26 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const squares = [
+        [0,1,2,3,4,5,6,7],
+        [0,1,2,3,4,5,6,7],
+        [0,1,2,3,4,5,6,7],
+        [0,1,2,3,4,5,6,7],
+        [0,1,2,3,4,5,6,7],
+        [0,1,2,3,4,5,6,7],
+        [0,1,2,3,4,5,6,7],
+        [0,1,2,3,4,5,6,7]
+    ]
+
+
+    return (
+        <div>
+            <div data-testid='board' style={{width: "800px", height: "800px", backgroundColor: "blue"}}>
+                {
+                    squares.map((row, rowIdx) => {
+                        return row.map((_, colIdx)=>{
+                            return <Square key={`${rowIdx}-${colIdx}`}></Square>
+                        })
+                    })
+                }
+            </div>
+        </div>
+    );
+}
+
+class Square extends React.Component<any, any> {
+    render() {
+        return <div data-testid="square" style={{ width: "10px", height: "10px" }}></div>
+    }
 }
 
 export default App;
