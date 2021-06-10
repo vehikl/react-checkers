@@ -16,7 +16,7 @@ function App() {
 
     return (
         <div>
-            <div data-testid='board' style={{display: "grid", gridTemplateColumns: "repeat(8, minmax(0, 1fr))", gridTemplateRows: "repeat(8, minmax(0, 1fr))", gridGap:"0px"}}>
+            <div data-testid='board' style={{display: "inline-grid", gridTemplateColumns: "repeat(8, minmax(0, 1fr))", gridTemplateRows: "repeat(8, minmax(0, 1fr))", gridGap:"0px"}}>
                 {
                     squares.map((row, rowIdx) => {
                         return row.map((_, colIdx) => {
